@@ -7,7 +7,11 @@ import FlashOnIcon from "@material-ui/icons/FlashOn";
 import IconButton from "@material-ui/core/IconButton";
 
 import "../css/SwipeButtons.css";
-const SwipeButtons = () => {
+
+const SwipeButtons = (props) => {
+  const onSwipe = (dir) => {
+    console.log("You swiped in " + dir + " direction.");
+  };
   return (
     <div className="swipe_buttons">
       <IconButton className="swipe_repeat">

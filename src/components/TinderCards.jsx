@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import TinderCard from "react-tinder-card";
 import database from "../firebase";
 import "../css/TinderCards.css";
-function TinderCards() {
+function TinderCards(props) {
   const [people, setPeople] = useState([]);
   useEffect(() => {
     const unsubscribe = database.collection("people").onSnapshot((snapshot) => {
@@ -16,6 +16,7 @@ function TinderCards() {
       unsubscribe();
     };
   }, []);
+
   return (
     <div>
       <div className="tinderCards__cardContainer">
